@@ -20,7 +20,6 @@ const blogApi = (app) => {
     validationHandler({ idToken: tokenSchema }, 'params'),
     async (req, res, next) => {
       const { idToken } = req.params;
-      console.log('ola');
 
       try {
         const user = await blogService.getUser({ idToken });

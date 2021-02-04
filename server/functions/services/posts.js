@@ -1,10 +1,11 @@
 const Firestore = require('../lib/posts');
 const admin = require('firebase-admin');
 const { config } = require('../config/config');
+const serviceAccount = require('../blog-a3313-firebase-adminsdk-903l1-6786f0a78c.json');
 
 admin.initializeApp(
   {
-    credential: admin.credential.cert(config.googleApplicationCredentials),
+    credential: admin.credential.cert(serviceAccount),
     databaseURL: config.url,
   },
   'postsAuth'
